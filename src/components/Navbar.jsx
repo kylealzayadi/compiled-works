@@ -32,9 +32,49 @@ const CloseIcon = ({ className = "" }) => (
   </svg>
 );
 
+const ResumeModal = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  return (
+    <div className="modal-overlay" onClick={handleBackdropClick}>
+      <div className="modal-content">
+        <button className="modal-close" onClick={onClose} aria-label="Close">
+          <CloseIcon className="modal-icon" />
+        </button>
+        <div className="resume-preview">
+          <iframe
+            src="https://drive.google.com/file/d/1qvrh5gGu9AGxw94AxEAS15StDe3YdOuV/preview"
+            title="Resume"
+            className="resume-iframe"
+            allow="autoplay"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,16 +94,15 @@ const Navbar = () => {
           onClick={() => setOpen(false)}
         >
           <span className="logo-mark">KA</span>
-          <span className="brand-text">CompiledWorrks</span>
+          <span className="brand-text">Compiled-Works</span>
         </a>
 
         <div className="nav-links" />
 
         <a
           className="nav-cta accent"
-          href="https://drive.google.com/file/d/1qvrh5gGu9AGxw94AxEAS15StDe3YdOuV/view?usp=sharing"
-          target="_blank"
-          rel="noreferrer"
+          onClick={() => setResumeOpen(true)}
+          style={{ cursor: "pointer" }}
         >
           Resumé
         </a>
@@ -83,16 +122,19 @@ const Navbar = () => {
           <li>
             <a
               className="nav-link accent"
-              href="https://drive.google.com/file/d/1qvrh5gGu9AGxw94AxEAS15StDe3YdOuV/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setResumeOpen(true);
+                setOpen(false);
+              }}
+              style={{ cursor: "pointer" }}
             >
-              Resumé
+              Resumé
             </a>
           </li>
         </ul>
       </div>
+
+      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
     </nav>
   );
 };
