@@ -71,11 +71,11 @@ function App() {
             </p>
             <ProjectLinks 
               githubUrl="https://github.com/kylealzayadi/RiordanScholarsSubmission/settings/pages"
-              productionUrl="http://kforkyle.me/RiordanScholarsSubmission/"
+              productionUrl="https://riordan.netlify.app/"
             />
           </div>
           <BrowserFrame 
-            url="http://kforkyle.me/RiordanScholarsSubmission/" 
+            url="https://riordan.netlify.app/" 
             title="Riordan Scholars Submission"
           />
         </section>
@@ -88,11 +88,11 @@ function App() {
             </p>
             <ProjectLinks 
               githubUrl="https://github.com/kylealzayadi/portfoliosite"
-              productionUrl="http://kforkyle.me/portfoliosite/"
+              productionUrl="https://portfoliosite2024.netlify.app/"
             />
           </div>
           <BrowserFrame 
-            url="http://kforkyle.me/portfoliosite/" 
+            url="https://portfoliosite2024.netlify.app/" 
             title="First Portfolio"
           />
         </section>
