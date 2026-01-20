@@ -21,7 +21,7 @@ function App() {
             <h2>Period Calculator</h2>
             <p>
               A mobile-friendly calculator for cycle timing and next periods that adjusts
-              for different planets' gravitational pulls.
+              for different planets' gravitational pulls; won the school science fair and advanced to regionals.
             </p>
             <ProjectLinks 
               githubUrl="https://github.com" 
@@ -35,7 +35,7 @@ function App() {
           <div className="demo-copy">
             <h2>Genevieve's Garden</h2>
             <p>
-              A beautiful garden showcase website with stunning visuals and responsive design.
+              Built this site to serve my church nonprofit that uses donations to feed the unhoused and those struggling with mental health on Hollywood streets every day, rain or shine.
             </p>
             <ProjectLinks 
               githubUrl="https://github.com/kylealzayadi/genegardenv2" 
@@ -61,6 +61,40 @@ function App() {
             />
           </div>
           <ScoopFrame />
+        </section>
+
+        <section id="riordan" className="demo-section">
+          <div className="demo-copy">
+            <h2>Riordan Scholars Submission</h2>
+            <p>
+              Built a Bootstrap site during a four-day Riordan Scholars program at UCLA Anderson and presented it in the final competition.
+            </p>
+            <ProjectLinks 
+              githubUrl="https://github.com/kylealzayadi/RiordanScholarsSubmission/settings/pages"
+              productionUrl="http://kforkyle.me/RiordanScholarsSubmission/"
+            />
+          </div>
+          <BrowserFrame 
+            url="http://kforkyle.me/RiordanScholarsSubmission/" 
+            title="Riordan Scholars Submission"
+          />
+        </section>
+
+        <section id="portfolio" className="demo-section">
+          <div className="demo-copy">
+            <h2>First Portfolio</h2>
+            <p>
+              My first portfolio site, built as a sophomore at UCLA to showcase early projects and experience.
+            </p>
+            <ProjectLinks 
+              githubUrl="https://github.com/kylealzayadi/portfoliosite"
+              productionUrl="http://kforkyle.me/portfoliosite/"
+            />
+          </div>
+          <BrowserFrame 
+            url="http://kforkyle.me/portfoliosite/" 
+            title="First Portfolio"
+          />
         </section>
 
         {/* other sections... */}
