@@ -59,12 +59,12 @@ const ResumeModal = ({ isOpen, onClose }) => {
           <CloseIcon className="modal-icon" />
         </button>
         <div className="resume-preview">
-          <iframe
-            src="https://drive.google.com/file/d/1qvrh5gGu9AGxw94AxEAS15StDe3YdOuV/preview"
-            title="Resume"
-            className="resume-iframe"
-            allow="autoplay"
-          />
+            <iframe
+              src="https://docs.google.com/document/d/1NxPZxBS0ooO30DQ9K3PtPSVQLj71iDoW0Jf3OjiQDAQ/preview"
+              title="Resume Google Doc"
+              className="resume-iframe"
+              allow="autoplay"
+            />
         </div>
       </div>
     </div>

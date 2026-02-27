@@ -54,21 +54,40 @@ const Stars = (props) => {
 const ScrollCamera = () => {
   const { camera, size, gl } = useThree();
   const [scrollY, setScrollY] = useState(0);
+  const [maxEffectScroll, setMaxEffectScroll] = useState(Infinity);
 
   useEffect(() => {
+    const updateMaxEffectScroll = () => {
+      const appContent = document.querySelector(".app-content");
+      if (!appContent) {
+        setMaxEffectScroll(Infinity);
+        return;
+      }
+
+      const appContentRect = appContent.getBoundingClientRect();
+      const appContentTop = window.scrollY + appContentRect.top;
+      const maxScroll = appContentTop + appContent.scrollHeight - window.innerHeight;
+      setMaxEffectScroll(Math.max(0, maxScroll));
+    };
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
+    updateMaxEffectScroll();
+    window.addEventListener("resize", updateMaxEffectScroll);
     window.addEventListener("scroll", handleScroll);
+
     return () => {
+      window.removeEventListener("resize", updateMaxEffectScroll);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   useFrame(() => {
-    camera.position.x = scrollY * 0.0002;
-    camera.position.z = 0.5 + scrollY * 0.0008;
+    const effectiveScroll = Math.min(scrollY, maxEffectScroll);
+    camera.position.x = effectiveScroll * 0.0002;
+    camera.position.z = 0.5 + effectiveScroll * 0.0008;
     camera.lookAt(0, 0, 0); // Ensure the camera always looks at the origin
     camera.rotateX(0.3);
     camera.rotateY(-0.2);

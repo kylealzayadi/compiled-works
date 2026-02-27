@@ -6,6 +6,7 @@ import BrowserFrame from "./components/BrowserFrame";
 import ScoopFrame from "./components/ScoopFrame";
 import ProjectLinks from "./components/ProjectLinks";
 import StarsCanvas from "./components/StarsCanvas";
+import groguButtonArt from "./assets/grogations.png";
 import "./index.css";
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
               for different planets' gravitational pulls; won the school science fair and advanced to regionals.
             </p>
             <ProjectLinks 
-              githubUrl="https://github.com" 
+              githubUrl="https://github.com/kylealzayadi/PeriodCalculator" 
               productionUrl="https://periodcalcsfair2019.netlify.app/"
             />
           </div>
@@ -39,11 +40,11 @@ function App() {
             </p>
             <ProjectLinks 
               githubUrl="https://github.com/kylealzayadi/genegardenv2" 
-              productionUrl="https://genevievesgardenhollywood.com/index.html"
+              productionUrl="https://gghwood.netlify.app/"
             />
           </div>
           <BrowserFrame 
-            url="https://genevievesgardenhollywood.com/index.html" 
+            url="https://gghwood.netlify.app/" 
             title="Genevieve's Garden"
           />
         </section>
@@ -56,7 +57,7 @@ function App() {
               Earn rewards while keeping your community clean!
             </p>
             <ProjectLinks 
-              githubUrl="https://github.com/kylealzayadi?tab=repositories" 
+              githubUrl="https://github.com/kylealzayadi/scoopLime" 
               productionUrl="https://scoopapp.netlify.app/#/login"
             />
           </div>
@@ -70,7 +71,7 @@ function App() {
               Built a Bootstrap site during a four-day Riordan Scholars program at UCLA Anderson and presented it in the final competition.
             </p>
             <ProjectLinks 
-              githubUrl="https://github.com/kylealzayadi/RiordanScholarsSubmission/settings/pages"
+              githubUrl="https://github.com/kylealzayadi/RiordanScholarsSubmission"
               productionUrl="https://riordan.netlify.app/"
             />
           </div>
@@ -97,8 +98,37 @@ function App() {
           />
         </section>
 
-        {/* other sections... */}
+        <section id="mentor" className="demo-section">
+          <div className="demo-copy">
+            <h2>Nick Ortega's Portfolio</h2>
+            <p>
+              I built this site for my mentor Nick Ortega, a talented educator and leader. Explore his portfolio and work, only with the password of course! (Private github repo)
+            </p>
+            <ProjectLinks 
+              githubUrl="https://github.com/kylealzayadi/nickgift" 
+              productionUrl="https://nortega.netlify.app/"
+            />
+          </div>
+          <BrowserFrame 
+            url="https://nortega.netlify.app/" 
+            title="Nick Ortega's Portfolio"
+          />
+        </section>
       </div>
+
+      <footer className="footer footer-isolated">
+        <a
+          href="https://kylealzayadi.com"
+          className="footer-button"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Visit Grogations"
+        >
+          <img src={groguButtonArt} alt="Grogations" className="footer-button-art" />
+        </a>
+        <p className="footer-text">Want to learn more about me?</p>
+        <p className="footer-text">Grogu knows the way!</p>
+      </footer>
     </div>
   );
 }
