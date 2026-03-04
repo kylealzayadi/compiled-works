@@ -60,7 +60,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
         </button>
         <div className="resume-preview">
             <iframe
-              src="https://docs.google.com/document/d/1NxPZxBS0ooO30DQ9K3PtPSVQLj71iDoW0Jf3OjiQDAQ/preview"
+              src="https://docs.google.com/document/d/1KANPEZoS_Rj1t1iL7QHjrSEdsMEyPhb7HH3ErdFMr_M/preview"
               title="Resume Google Doc"
               className="resume-iframe"
               allow="autoplay"

@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import PhoneFrame from "./components/PhoneFrame";
 import BrowserFrame from "./components/BrowserFrame";
 import ScoopFrame from "./components/ScoopFrame";
+import FeaturedSection from "./components/FeaturedSection";
 import ProjectLinks from "./components/ProjectLinks";
 import StarsCanvas from "./components/StarsCanvas";
 import groguButtonArt from "./assets/grogations.png";
@@ -16,6 +17,8 @@ function App() {
       <div className="app-content">
         <Navbar />
         <Hero />
+
+        <FeaturedSection />
 
         <section id="demo" className="demo-section">
           <div className="demo-copy">
