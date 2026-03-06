@@ -20,35 +20,37 @@ function App() {
 
         <FeaturedSection />
 
-        <section id="demo" className="demo-section">
-          <div className="demo-copy">
-            <h2>Period Calculator</h2>
-            <p>
-              A mobile-friendly calculator for cycle timing and next periods that adjusts
-              for different planets' gravitational pulls; won the school science fair and advanced to regionals.
-            </p>
-            <ProjectLinks 
-              githubUrl="https://github.com/kylealzayadi/PeriodCalculator" 
-              productionUrl="https://periodcalcsfair2019.netlify.app/"
-            />
-          </div>
-          <PhoneFrame />
-        </section>
-
         <section id="garden" className="demo-section">
           <div className="demo-copy">
             <h2>Genevieve's Garden</h2>
             <p>
-              Built this site to serve my church nonprofit that uses donations to feed the unhoused and those struggling with mental health on Hollywood streets every day, rain or shine.
+              Built this site to serve my local church nonprofit that uses donations to feed the unhoused and those struggling with mental health on Hollywood streets every day, rain or shine.
             </p>
             <ProjectLinks 
               githubUrl="https://github.com/kylealzayadi/genegardenv2" 
-              productionUrl="https://gghwood.netlify.app/"
+              productionUrl="https://gghollywood.org/"
             />
           </div>
           <BrowserFrame 
-            url="https://gghwood.netlify.app/" 
+            url="https://gghollywood.org/" 
             title="Genevieve's Garden"
+          />
+        </section>
+
+        <section id="riordan" className="demo-section">
+          <div className="demo-copy">
+            <h2>Riordan Scholars Submission</h2>
+            <p>
+             Compiled a Bootstrap site during a four-day Riordan Scholars program at UCLA Anderson and presented it in the final competition.
+            </p>
+            <ProjectLinks 
+              githubUrl="https://github.com/kylealzayadi/RiordanScholarsSubmission"
+              productionUrl="https://riordan.netlify.app/"
+            />
+          </div>
+          <BrowserFrame 
+            url="https://riordan.netlify.app/" 
+            title="Riordan Scholars Submission"
           />
         </section>
 
@@ -67,20 +69,20 @@ function App() {
           <ScoopFrame />
         </section>
 
-        <section id="riordan" className="demo-section">
+        <section id="mentor" className="demo-section">
           <div className="demo-copy">
-            <h2>Riordan Scholars Submission</h2>
+            <h2>Mentor's Portfolio</h2>
             <p>
-              Built a Bootstrap site during a four-day Riordan Scholars program at UCLA Anderson and presented it in the final competition.
+              I built this site for my mentor, a talented educator and leader. Explore his portfolio and work, only with the password of course! (Private github repo)
             </p>
             <ProjectLinks 
-              githubUrl="https://github.com/kylealzayadi/RiordanScholarsSubmission"
-              productionUrl="https://riordan.netlify.app/"
+              githubUrl="https://github.com/kylealzayadi/nickgift" 
+              productionUrl="https://nortega.netlify.app/"
             />
           </div>
           <BrowserFrame 
-            url="https://riordan.netlify.app/" 
-            title="Riordan Scholars Submission"
+            url="https://nortega.netlify.app/" 
+            title="Nick Ortega's Portfolio"
           />
         </section>
 
@@ -101,21 +103,19 @@ function App() {
           />
         </section>
 
-        <section id="mentor" className="demo-section">
+        <section id="demo" className="demo-section">
           <div className="demo-copy">
-            <h2>Nick Ortega's Portfolio</h2>
+            <h2>Period Calculator</h2>
             <p>
-              I built this site for my mentor Nick Ortega, a talented educator and leader. Explore his portfolio and work, only with the password of course! (Private github repo)
+              A mobile-friendly calculator for cycle timing and next periods that adjusts
+              for different planets' gravitational pulls; won the school science fair and advanced to regionals.
             </p>
             <ProjectLinks 
-              githubUrl="https://github.com/kylealzayadi/nickgift" 
-              productionUrl="https://nortega.netlify.app/"
+              githubUrl="https://github.com/kylealzayadi/PeriodCalculator" 
+              productionUrl="https://periodcalcsfair2019.netlify.app/"
             />
           </div>
-          <BrowserFrame 
-            url="https://nortega.netlify.app/" 
-            title="Nick Ortega's Portfolio"
-          />
+          <PhoneFrame />
         </section>
       </div>
 
