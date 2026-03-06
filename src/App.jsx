@@ -20,6 +20,25 @@ function App() {
 
         <FeaturedSection />
 
+        <section id="logapi-front" className="demo-section">
+          <div className="demo-copy">
+            <h2>Logistics API Frontend</h2>
+            <p>
+              Frontend interface for my logistics API project, fully connected
+              end-to-end to everything, including the API, database, and core
+              logistics workflows for inventory, orders, and metrics.
+            </p>
+            <ProjectLinks
+              githubUrl="https://github.com/kylealzayadi/logapifront"
+              productionUrl="https://logapifrontweb.netlify.app"
+            />
+          </div>
+          <BrowserFrame
+            url="https://logapifrontweb.netlify.app"
+            title="Logistics API Frontend"
+          />
+        </section>
+
         <section id="garden" className="demo-section">
           <div className="demo-copy">
             <h2>Genevieve's Garden</h2>

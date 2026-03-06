@@ -2,6 +2,8 @@ import React from "react";
 import screenshotImg from "../assets/screenofchrome.png";
 import logApiScreenImg from "../assets/logapiscreeny.png";
 
+const LOGISTICS_API_PASSWORD = import.meta.env.VITE_LOGISTICS_API_PASSWORD ?? "";
+
 const GitHubIcon = ({ className = "" }) => (
   <svg
     className={className}
@@ -25,8 +27,9 @@ const FeaturedSection = () => {
       icon: "💻",
       image: logApiScreenImg,
       imageClassName: "feature-img-content feature-img-logistics",
-      link: "https://github.com/kylealzayadi/logapi",
-      githubUrl: "https://github.com/kylealzayadi/logapi"
+      link: "https://logistics-api-kyle.azurewebsites.net/index.html",
+      githubUrl: "https://github.com/kylealzayadi/logapi",
+      requiresPassword: true
     },
     {
       id: 2,
@@ -42,26 +45,40 @@ const FeaturedSection = () => {
     }
   ];
 
-  const handleButtonClick = (event, link) => {
-    event.stopPropagation();
-    if (link) {
-      window.open(link, '_blank');
-    }
-  };
-
-  const handleCardClick = (link) => {
-    if (link) {
-      window.open(link, '_blank');
-    }
-  };
-
-  const handleCardKeyDown = (event, link) => {
-    if (!link) {
+  const openFeatureLink = (feature) => {
+    if (!feature?.link) {
       return;
     }
+
+    if (feature.requiresPassword) {
+      const enteredPassword = window.prompt("Enter password to view this project:");
+
+      if (enteredPassword !== LOGISTICS_API_PASSWORD) {
+        window.alert("Incorrect password.");
+        return;
+      }
+    }
+
+    window.open(feature.link, "_blank");
+  };
+
+  const handleButtonClick = (event, feature) => {
+    event.stopPropagation();
+    openFeatureLink(feature);
+  };
+
+  const handleCardClick = (feature) => {
+    openFeatureLink(feature);
+  };
+
+  const handleCardKeyDown = (event, feature) => {
+    if (!feature?.link) {
+      return;
+    }
+
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      window.open(link, '_blank');
+      openFeatureLink(feature);
     }
   };
 
@@ -73,8 +90,8 @@ const FeaturedSection = () => {
           <div
             key={feature.id}
             className={`feature-card ${feature.link ? "feature-card-clickable" : ""}`}
-            onClick={() => handleCardClick(feature.link)}
-            onKeyDown={(event) => handleCardKeyDown(event, feature.link)}
+            onClick={() => handleCardClick(feature)}
+            onKeyDown={(event) => handleCardKeyDown(event, feature)}
             role={feature.link ? "button" : undefined}
             tabIndex={feature.link ? 0 : undefined}
           >
@@ -95,7 +112,7 @@ const FeaturedSection = () => {
               <div className="feature-actions">
                 <button 
                   className="feature-button"
-                  onClick={(event) => handleButtonClick(event, feature.link)}
+                  onClick={(event) => handleButtonClick(event, feature)}
                 >
                   {feature.buttonText}
                 </button>
